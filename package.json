@@ -1,6 +1,6 @@
 {
   "name": "gridpaint",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "a canvas for creating grid-based art in the browser",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
     "edit",
     "art"
   ],
-  "author": "Zorian Medwid <misterhat144@gmail.com>, Anthony DeDominic",
+  "author": "Zorian Medwid <misterhat144@gmail.com>, Anthony DeDominic, Pawel Szymczykowski",
   "license": "LGPL-3.0+",
   "bugs": {
     "url": "https://github.com/misterhat/gridpaint/issues"
