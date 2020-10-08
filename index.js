@@ -28,6 +28,7 @@ const draw = require('./lib/draw');
 const handlers = require('./lib/handlers');
 const save = require('./lib/save');
 const tools = require('./lib/tools');
+const state = require('./lib/state');
 
 const DEFAULT_PALETTE = [
     'transparent', '#fff', '#c0c0c0', '#808080', '#000',
@@ -49,6 +50,7 @@ function GridPaint(options) {
     this.cellWidth = options.cellWidth || 16;
     this.cellHeight = options.cellHeight || this.cellWidth;
     this.palette = options.palette || DEFAULT_PALETTE;
+    this.backgroundColour = options.backgroundColour || 0;
 
     this.canvas = new Canvas(
         this.width * this.cellWidth,
@@ -99,6 +101,16 @@ inherits(GridPaint, EventEmitter);
 GridPaint.prototype.resize = function () {
     this.canvas.width = this.width * this.cellWidth;
     this.canvas.height = this.height * this.cellHeight;
+
+    // Expand the painting array
+    for (let i = 0; i < this.height; i += 1) {
+        this.painting[i] = this.painting[i] || [];
+        for (let j = 0; j < this.width; j += 1) {
+            if (this.painting[i][j] === undefined) {
+                this.painting[i][j] = this.backgroundColour;
+            }
+        }
+    }
 };
 
 // perform the current tool's action on the painting
@@ -127,6 +139,9 @@ GridPaint.prototype.saveAs = save;
 
 GridPaint.prototype.attachHandlers = handlers.attach;
 GridPaint.prototype.detachHandlers = handlers.detach;
+
+GridPaint.prototype.freezeState = state.freeze;
+GridPaint.prototype.thawState = state.thaw;
 
 // attach handlers & start draw loop
 GridPaint.prototype.init = function () {

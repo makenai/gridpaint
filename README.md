@@ -142,6 +142,8 @@ painter.isApplied = false; // the status of mousedown
 painter.palette =  [ 'transparent', '#fff', '#c0c0c0', '#808080', '#000',
                      '#f00', '#800', '#ff0', '#808000', '#0f0', '#080', '#0ff',
                      '#008080', '#00f', '#000080', '#f0f', '#800080' ]
+// Which palette entry to be the background colour
+painter.backgroundColour = 0;
 // a 2D array painter.height x painter.width of palette indexes
 painter.painting = [ [], ... ];
 painter.tool = 'pencil'; // the currently selected tool (pencil or bucket)
