@@ -61,6 +61,7 @@ function GridPaint(options) {
     this.background = true;
     this.colour = 0;
     this.cursor = { x: -1, y: -1 };
+    this.toolStartPoint = null;
     this.outline = options.outline || false;
     this.grid = false;
     this.gridColour = '#000';
@@ -125,15 +126,21 @@ GridPaint.prototype.clear = tools.clear;
 GridPaint.prototype.compareChanges = tools.compare;
 GridPaint.prototype.contrastGrid = tools.contrast;
 GridPaint.prototype.pencil = tools.pencil;
+GridPaint.prototype.line = tools.line;
+GridPaint.prototype.circle = tools.circle;
 GridPaint.prototype.redo = tools.redo;
 GridPaint.prototype.replace = tools.replace;
 GridPaint.prototype.undo = tools.undo;
 GridPaint.prototype.shift = tools.shift;
+GridPaint.prototype.setToolStartPoint = tools.setToolStartPoint;
+GridPaint.prototype.resetToolState = tools.resetToolState;
 
 GridPaint.prototype.drawBackground = draw.background;
 GridPaint.prototype.drawCursor = draw.cursor;
+GridPaint.prototype.drawToolState = draw.toolState;
 GridPaint.prototype.drawGrid = draw.grid;
 GridPaint.prototype.drawPainting = draw.painting;
+GridPaint.prototype.drawPixelOverlay = draw.pixelOverlay;
 GridPaint.prototype.draw = draw.tick;
 
 GridPaint.prototype.saveAs = save;

@@ -185,8 +185,20 @@ and `y` is used.
 `x` and `y` are the coordinates to begin the replacement process. If not
 provided, `cursor` position is used.
 
+### painter.line()
+Draw a line from the tool starting point to the current cursor position
+
+### painter.circle()
+Draw a circle from the tool starting point to the current cursor position
+
 ### painter.clear()
 Set all of the cells to the first colour in the palette.
+
+### painter.setToolStartPoint()
+Sets the starting point for a 2-step tool like circle or line
+
+### painter.resetToolState()
+Clears the starting point for a 2-step tool
 
 ### painter.destroy()
 Remove event handlers and cease the draw loop (browser only).
@@ -225,10 +237,10 @@ will be half the original, `2` would be twice as large). Default: `1`.
 Undo the last action since the last tool was applied.
 
 
-### const jsonObj = painter.freeze()
+### const jsonObj = painter.freezeState()
 Gets the current state of the canvas (minus undo history) as JSON
 
-### painter.freeze(jsonObj)
+### painter.thawState(jsonObj)
 Restore the current state of the canvas from a JSON object
 
 ## Events
