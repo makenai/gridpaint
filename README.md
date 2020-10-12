@@ -197,6 +197,9 @@ Initialize event handlers and start the draw loop (browser only).
 ### painter.pencil()
 Set the cell in cursor's position to the selected colour.
 
+### painter.shift(rows, cols)
+Shift the entire canvas up or down by the specified number of rows and cols
+
 ### painter.redo()
 Redo the last undo action.
 
@@ -220,6 +223,13 @@ will be half the original, `2` would be twice as large). Default: `1`.
 
 ### painter.undo()
 Undo the last action since the last tool was applied.
+
+
+### const jsonObj = painter.freeze()
+Gets the current state of the canvas (minus undo history) as JSON
+
+### painter.freeze(jsonObj)
+Restore the current state of the canvas from a JSON object
 
 ## Events
 Events share the same names as the methods that trigger them. The following

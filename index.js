@@ -128,6 +128,7 @@ GridPaint.prototype.pencil = tools.pencil;
 GridPaint.prototype.redo = tools.redo;
 GridPaint.prototype.replace = tools.replace;
 GridPaint.prototype.undo = tools.undo;
+GridPaint.prototype.shift = tools.shift;
 
 GridPaint.prototype.drawBackground = draw.background;
 GridPaint.prototype.drawCursor = draw.cursor;
