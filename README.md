@@ -191,6 +191,9 @@ Draw a line from the tool starting point to the current cursor position
 ### painter.circle()
 Draw a circle from the tool starting point to the current cursor position
 
+### painter.square()
+Draw a square from the tool starting point to the current cursor position
+
 ### painter.clear()
 Set all of the cells to the first colour in the palette.
 

@@ -121,6 +121,9 @@ GridPaint.prototype.action = function () {
 };
 
 GridPaint.prototype.applyTool = tools.apply;
+GridPaint.prototype.isDraggableTool = tools.isDraggable;
+GridPaint.prototype.startToolDrag = tools.startDrag;
+GridPaint.prototype.endToolDrag = tools.endDrag;
 GridPaint.prototype.bucket = tools.bucket;
 GridPaint.prototype.clear = tools.clear;
 GridPaint.prototype.compareChanges = tools.compare;
@@ -128,6 +131,7 @@ GridPaint.prototype.contrastGrid = tools.contrast;
 GridPaint.prototype.pencil = tools.pencil;
 GridPaint.prototype.line = tools.line;
 GridPaint.prototype.circle = tools.circle;
+GridPaint.prototype.square = tools.square;
 GridPaint.prototype.redo = tools.redo;
 GridPaint.prototype.replace = tools.replace;
 GridPaint.prototype.undo = tools.undo;
@@ -147,6 +151,7 @@ GridPaint.prototype.saveAs = save;
 
 GridPaint.prototype.attachHandlers = handlers.attach;
 GridPaint.prototype.detachHandlers = handlers.detach;
+GridPaint.prototype.updateCursorPosition = handlers.updateCursorPosition;
 
 GridPaint.prototype.freezeState = state.freeze;
 GridPaint.prototype.thawState = state.thaw;
