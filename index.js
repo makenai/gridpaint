@@ -65,6 +65,7 @@ function GridPaint(options) {
     this.outline = options.outline || false;
     this.grid = false;
     this.gridColour = '#000';
+    this.showCursor = true;
     this.isApplied = false;
     this.painting = [];
     this.redoHistory = [];
